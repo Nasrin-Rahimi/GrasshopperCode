@@ -75,3 +75,15 @@ If the function makes it through the whole loop without returning false, then al
 The last line of the function should return true. This line of code will only run if all the letters in the string are found.
 
 js code for cheking the string letters exist in the object is in : compare-letters.js
+
+In order for a string (dictionaryWord) to be a subsequence of another string (stringSequence), all of its letters must appear in the same order.
+
+When a character from a string is found in stringSequence, the function will need to also check that it appears after the last checked character.
+
+For example, when the 'l' in 'loan' is found in 'balloon', the next letter, 'o', must be found in 'loon' if the word is a subsequence.
+
+Imagine you know the index where to begin searching for a character in stringSequence.
+
+Let’s call this value its minIndex.
+
+to find the next index see find_next-index.js
