@@ -59,3 +59,19 @@ Making a map stops us from having to loop through stringSequence over and over a
 By making a map, we can just loop through stringSequence once, which makes the function faster and more efficient.
 
 js code for converting string to object is in : stirng-to-object.js
+
+Once you have turned the string in stringSequence into an object, you can compare it with a string in dictionary to find out if the dictionary string is a subsequence.
+
+To start, let’s write a function that checks if all the characters in a string exist as properties in the object, and returns true or false.
+
+We are just checking if the characters exist. We can make sure they are in the right order later.
+
+If a character in the string exists as a property in the object, no action needs to occur and the loop should simply continue to check the next character in the string.
+
+If a property doesn't exist, then we know the string can't be a subsequence and there's no need to check other characters. The function should return false and stop executing.
+
+If the function makes it through the whole loop without returning false, then all the letters in the string must have a matching property.
+
+The last line of the function should return true. This line of code will only run if all the letters in the string are found.
+
+js code for cheking the string letters exist in the object is in : compare-letters.js
