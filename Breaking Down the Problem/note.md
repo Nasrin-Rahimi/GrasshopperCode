@@ -36,6 +36,8 @@ First, think about what inputs, or parameters, the function needs to take.
 
 The input of fuction should be an array of string and the function should return the longest string. (js code is in: longest-subsequence-array-of-string.js)
 
+**********************************************************************************
+
 To check if a word in the array (dictionary) is a subsequence of the string (stringSequence), it is important to know what characters are in stringSequence and where they appear.
 
 To do this, we can turn the string into an object.
@@ -60,6 +62,8 @@ By making a map, we can just loop through stringSequence once, which makes the f
 
 js code for converting string to object is in : stirng-to-object.js
 
+****************************************************************************
+
 Once you have turned the string in stringSequence into an object, you can compare it with a string in dictionary to find out if the dictionary string is a subsequence.
 
 To start, let’s write a function that checks if all the characters in a string exist as properties in the object, and returns true or false.
@@ -76,6 +80,8 @@ The last line of the function should return true. This line of code will only ru
 
 js code for cheking the string letters exist in the object is in : compare-letters.js
 
+**************************************************************************
+
 In order for a string (dictionaryWord) to be a subsequence of another string (stringSequence), all of its letters must appear in the same order.
 
 When a character from a string is found in stringSequence, the function will need to also check that it appears after the last checked character.
@@ -86,4 +92,25 @@ Imagine you know the index where to begin searching for a character in stringSeq
 
 Let’s call this value its minIndex.
 
+We can write a helper function to use in the compareLetters function.
+
+The helper function will take minIndex and the array of indices where the current character appears in stringSequence.
+
+When the function finds an index that is greater than or equal to minIndex, it will return that index plus 1.
+
+If it can not find an index, it will return false.
+
 to find the next index see find_next-index.js
+
+***************************************************************************
+
+The compareLetters() function didn't check if the characters were in the right order, but only if each character existed.
+
+Let's think about how we can update the function so that it also checks the order of the characters...
+
+First, let's change the function's name.
+
+A function's name should reflect what it does.
+
+As we are changing the compareLetters() function to check if a string is a subsequence, let's change the function's name to isSubsequence().
+

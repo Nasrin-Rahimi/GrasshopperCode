@@ -7,7 +7,8 @@
 
 let compareLetters = function(word, object) {
     for(let letter in word) {
-        if(!object[letter]) {
+        if(object[letter]) {
+        } else {
             return false;
         }
     }
