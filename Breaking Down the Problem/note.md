@@ -114,3 +114,73 @@ A function's name should reflect what it does.
 
 As we are changing the compareLetters() function to check if a string is a subsequence, let's change the function's name to isSubsequence().
 
+Let's use the findNextIndex() helper function you just created to update the minIndex variable if a character is found in the map object.
+
+    function isSubsequence(word, map) {
+        let minIndex = 0;
+        for (let letter of word) {
+            if (map[letter]) {
+            minIndex = findNextIndex(map[letter], minIndex);
+            } else {
+            return false;
+            }
+        }
+        return true;
+    }
+
+Let's look closer at this line of code:
+
+minIndex = findNextIndex(map[letter], minIndex);
+The findNextIndex() function will search through the array of indices contained in map[letter].
+
+The function will return the number of the next valid index, or else return false.
+
+If the function returns false, we know the string is not a subsequence.
+
+Let's add an if statement that checks if minIndex === false and if so, returns false:
+
+function isSubsequence(word, map) {
+  let minIndex = 0;
+  for (let letter of word) {
+    if (map[letter]) {
+      minIndex = findNextIndex(map[letter], minIndex);
+      if (minIndex === false) {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  }
+  return true;
+}
+
+**************************************
+
+Let's review what we did:
+
+1- The function takes a string (stringSequence) and an array of strings (dictionary).
+
+2- The function creates a local variable to store an empty array.
+
+This array will eventually store all of the strings that are a subsequence.
+
+For example:
+
+let subsequences = [];
+
+3- The mapString() helper function maps the stringSequence string and stores the object that the function returns in a local variable.
+
+For example:
+
+let map = mapString(stringSequence);
+
+4- The function iterates through the dictionary array of strings.
+
+5- While the function iterates, the isSubsequence() helper function compares the current string with the map object, and returns true or false.
+
+6- If the isSubsequence() function returns true, then the current string is pushed to the subsequences array.
+
+7- Finally, the longestWord() helper function returns the longest word in the subsequences array.
+
+8- 
+
