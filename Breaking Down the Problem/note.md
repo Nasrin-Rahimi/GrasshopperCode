@@ -182,5 +182,6 @@ let map = mapString(stringSequence);
 
 7- Finally, the longestWord() helper function returns the longest word in the subsequences array.
 
-8- 
+8- See the final code in longest-match.js
+
 
