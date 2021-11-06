@@ -18,5 +18,30 @@ The .getName() method returns the name of the file.
 
 If .makeCopy() is given a string as an argument, it will set the name of the copy to that string.
 
+DocumentApp is like DriveApp, except it works with documents in Docs instead of files in Drive.
+
+DocumentApp also allows you to access and modify the contents of documents, something you can't do with DriveApp.
+
+For example, you can print and edit the text inside a document using DocumentApp.
+
+DocumentApp.openById() is similar to DriveApp.getFileById(). It takes an id and gets the document with that id.
+
+The .getName() method returns the name of the document file.
+
+After opening a document with DocumentApp.openById(), retrieve the text of the document using .getText().
+
+.replaceText() takes 2 arguments: a string to replace and a new string to put in its place.
+
+Every occurrence of the string to replace is replaced with the new string.
+
+let id = '1VFYFgTvngQzMgm-x1Kyejv1fiTWVTahG9G8x2a76sAM';
+
+let doc = DocumentApp.openById(id);
+let originalText = doc.getText();
+console.log(originalText);
+
+doc.replaceText('you', 'snakes');
+let newText = doc.getText();
+console.log(newText);
 
 
