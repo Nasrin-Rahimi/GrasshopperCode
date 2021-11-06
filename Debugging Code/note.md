@@ -39,3 +39,9 @@ try {
 } catch (e) {
   console​.log(e);
 }
+
+If there is no recipe named ‘potato soup’, ingredients.length will cause an error that would stop the code from running.
+
+But since the code is in a try block, the catch block will take over and print the error message. This keeps the code from breaking.
+
+ingredients.forEach(console.log) will not run because the code never returns to the try block.
